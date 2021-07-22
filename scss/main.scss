@@ -1,0 +1,9 @@
+// CUSTOMIZE BOOTSTRAP
+
+$font-family-sans-serif:'Poppins', sans-serif;
+
+$secondary: #ebebeb;
+$border-radius-lg: .5rem;
+
+@import './styles';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
