@@ -1,6 +1,8 @@
 const colorCircle = document.querySelectorAll('.color-circle');
 const clearCanvas = document.querySelector('#clear-canvas');
 const downloadBtn = document.querySelector('#download-btn');
+const undoBtn = document.querySelector('#btn-undo');
+const redoBtn = document.querySelector('#btn-redo');
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
@@ -19,7 +21,7 @@ canvas.addEventListener('mousedown', (event) => {
 
 
 // TO STOP DRAWING
-canvas.addEventListener('mouseup', (event) => {
+canvas.addEventListener('mouseup', () => {
     isDrawing = false;
     x = undefined;
     y = undefined;

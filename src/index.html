@@ -43,11 +43,13 @@
         </header> <!-- main -->
 
         <section class="d-flex justify-content-center align-items-center pt-3 pb-4">
-            <p class="text-center mb-0">Paint by holding down the mouse left button and moving it.<a href=""
-                    id="download-btn" class="btn btn-primary d-inline-block align-items-center shadow ms-3" download="my_painting.png"><i
-                        class="bi bi-download"></i>Download</a>
-                <button id="clear-canvas" class="btn btn-danger d-inline-block shadow ms-2"><i
-                        class="bi bi-eraser-fill"></i>Clear canvas</a></button>
+            <p class="text-center mb-0">Paint by holding down the mouse left button and moving it.
+                <button id="btn-undo" class="btn btn-light d-inline-block shadow ms-2"><i class="bi bi-arrow-90deg-left ms-0 me-0"></i></button>
+                        <button id="btn-redo" class="btn btn-light d-inline-block shadow ms-2"><i class="bi bi-arrow-90deg-right ms-0 me-0"></i></button>
+                <a href="" id="download-btn" class="btn btn-primary d-inline-block align-items-center shadow ms-2" download="my_painting.png"><i
+                class="bi bi-download"></i>Download</a>
+                    <button id="clear-canvas" class="btn btn-danger d-inline-block shadow ms-2"><i
+                    class="bi bi-eraser-fill"></i>Clear canvas</a></button>
             </p>
         </section>
 
