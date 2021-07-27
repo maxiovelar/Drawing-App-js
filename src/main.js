@@ -4,56 +4,63 @@ const downloadBtn = document.querySelector('#download-btn');
 const undoBtn = document.querySelector('#btn-undo');
 const redoBtn = document.querySelector('#btn-redo');
 const canvas = document.querySelector('canvas');
-const c = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 
-let penSize = 10;
+let penSize = 6;
 let isDrawing;
 let x;
 let y;
 
+let index = -1;
+let restoreArray = [];
+
+
 
 // TO START DRAWING
 canvas.addEventListener('mousedown', (event) => {
-    isDrawing = true;
-    x = event.offsetX;
-    y = event.offsetY;
+    if(event.type != 'mouseout') {
+
+        isDrawing = true;
+        x = event.offsetX;
+        y = event.offsetY;
+
+    }
+
 });
 
-
-// TO STOP DRAWING
-canvas.addEventListener('mouseup', () => {
-    isDrawing = false;
-    x = undefined;
-    y = undefined;
-});
 
 
 // TO SHOW THE DRAWINGS
-
-c.fillStyle = 'hotpink';
-c.strokeStyle = c.fillStyle;
+ctx.fillStyle = 'hotpink';
+ctx.strokeStyle = ctx.fillStyle;
 
 const drawLine = (x1, y1, x2, y2) => {
-    c.beginPath();
-    c.moveTo(x1, y1);
-    c.lineTo(x2, y2);
-    c.strokeStyle = c.fillStyle;
-    c.lineWidth = penSize * 2;
-    c.stroke();
+   
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.strokeStyle = ctx.fillStyle;
+    ctx.lineWidth = penSize * 2;
+    ctx.stroke();
+
 };
 
 const draw = (x2, y2) => {
+
     if (isDrawing) {
-        c.beginPath();
-        c.arc(x2, y2, penSize, 0, Math.PI * 2);
-        c.closePath();
-        c.fill();
+       
+        ctx.beginPath();
+        ctx.arc(x2, y2, penSize, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
         // draw line
         drawLine(x, y, x2, y2);
+
     }
 
     x = x2;
     y = y2;
+
 };
 
 canvas.addEventListener('mousemove', (event) => {
@@ -61,40 +68,96 @@ canvas.addEventListener('mousemove', (event) => {
 });
 
 
-// TO CLEAR CANVAS
 
-clearCanvas.addEventListener('click', () => {
-    c.clearRect(0, 0, canvas.width, canvas.height);
+// TO STOP DRAWING
+canvas.addEventListener('mouseup', (event) => {
+    
+    if(event.type != 'mouseout') {
+
+        isDrawing = false;
+        x = undefined;
+        y = undefined;
+        
+        restoreArray.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+        index += 1;
+        undoBtn.classList.remove('disabled');
+        
+    };
+
 });
 
 
-// TO SELECT A COLOR
 
+// TO CLEAR CANVAS
+const clear = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+clearCanvas.addEventListener('click', () => {
+    
+    clear();
+    restoreArray = [];
+    index = -1;
+    undoBtn.classList.add('disabled');
+    
+});
+
+
+
+// TO SELECT A COLOR
 const removeActiveCircleColor = () => {
+
     colorCircle.forEach((circle) => {
         circle.classList.remove('selected');
     });
+
 };
 
 const selectColor = (element) => {
+
     removeActiveCircleColor();
-    c.fillStyle = element.getAttribute('data-color');
+    ctx.fillStyle = element.getAttribute('data-color');
     element.classList.add('selected');
+
 };
 
 const favColor = (element) => {
+
     removeActiveCircleColor();
-    c.fillStyle = element.value;
+    ctx.fillStyle = element.value;
+
 };
 
 
-// TO CHANGE THE PEN SIZE
 
+// TO CHANGE THE PEN SIZE
 const penSizeChange = (pensize) => {
     penSize = pensize
 };
 
 
-// TO DOWNLOAD THE PAINT
 
+// TO DOWNLOAD THE PAINT
 downloadBtn.addEventListener('click', (event) => event.target.href = canvas.toDataURL());
+
+
+// TO UNDO
+const undoLast = () => {
+
+    if(index <= 0) {
+        clear();
+        undoBtn.classList.add('disabled');
+        
+    } else {
+
+        index -= 1;
+        ctx.putImageData(restoreArray[index], 0, 0);
+        undoBtn.classList.remove('disabled');
+    
+    };
+
+};
+
+undoBtn.addEventListener('click', () => {
+    undoLast();
+}); 
+
+
