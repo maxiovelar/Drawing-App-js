@@ -10,15 +10,10 @@ html {
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
 }
 
 #responsive-navbar {
     display: none;
-}
-
-header {
-    // width: 75%;
 }
 
 #pen-tools {
@@ -71,13 +66,6 @@ i {
     transform:scale(1.4);
 }
 
-canvas {
-    width:1000px; 
-    height:550px;
-    min-width: 90%;
-    min-height: 60%;
-}
-
 @media only screen and (max-width: 992px) {
 
     main {
@@ -100,14 +88,6 @@ canvas {
     #fav-container {
         margin-top: 20px;
         margin-bottom: 15px;
-    }
-
-    // div label {
-    //     display: none;
-    // }
-
-    canvas {
-        max-height: 75vh;
     }
 
 }
