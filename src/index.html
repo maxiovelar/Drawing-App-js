@@ -12,52 +12,120 @@
 
 <body class="bg-secondary">
 
-    <div class="container">
-
-
-        <header id="pen-tools" class="d-flex justify-content-around m-auto bg-white rounded-3 shadow py-3 mt-3 mb-2">
-            <div id="drawing-colors" class="d-flex justify-content-center align-items-center">
-                <div class="color-circle rounded-circle shadow-sm selected" data-color="hotpink" onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="orange" onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="red" onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="yellow" onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="black" onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="blue" onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm border border-1 border-light" data-color="white" onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="green" onclick="selectColor(this)"></div>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-white p-4">
+            <div id="drawing-colors" class="d-flex justify-content-center align-items-center py-3">
+                <div class="color-circle rounded-circle shadow-sm selected" data-color="hotpink"
+                    onclick="selectColor(this)"></div>
+                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="orange" onclick="selectColor(this)">
+                </div>
+                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="red" onclick="selectColor(this)">
+                </div>
+                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="yellow" onclick="selectColor(this)">
+                </div>
+                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="black" onclick="selectColor(this)">
+                </div>
+                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="blue" onclick="selectColor(this)">
+                </div>
+                <div class="color-circle rounded-circle ms-2 shadow-sm border border-1 border-light" data-color="white"
+                    onclick="selectColor(this)"></div>
+                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="green" onclick="selectColor(this)">
+                </div>
             </div>
 
-            <div id="fav-container" class="border border-2 border-top-0 border-bottom-0 px-4">
+            <hr>
+
+            <div id="fav-container" class="px-2 py-3 text-center">
                 <label for="fav-color" class="form-label mb-0"><i class="bi bi-palette-fill"></i>Select your favourite
                     color</label>
                 <input type="color" name="fav-color" id="fav-color"
-                    class="form-control form-control-color border border-0 m-auto" value="#000000" onchange="favColor(this)">
+                    class="form-control form-control-color border border-0 m-auto" value="#000000"
+                    onchange="favColor(this)">
             </div>
 
-            <div id="pen-size" class="d-flex flex-column text-center mb-0">
+            <hr>
+
+            <div id="pen-size" class="d-flex flex-column text-center mb-0 pt-3">
                 <label for="pen-range" class="form-label mb-2"><i class="bi bi-pencil-fill"></i>Pen size</label>
                 <input type="range" id="pen-range" name="pen-range" class="form-range" value="6" step="2" min="2"
                     max="40" onclick="penSizeChange(this.value)">
             </div>
+        </div>
+    </div>
+    <nav id="responsive-navbar" class="navbar navbar-light bg-white shadow-sm py-1">
+        <div class="container-fluid ps-0">
+            <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h4 class="m-auto pe-5"><b>Drawing App</b></h4>
+        </div>
+    </nav> <!-- RESPONSIVE NAVBAR -->
 
-        </header> <!-- main -->
+    <div class="container-xl">
+
+        <main>
+            <header id="pen-tools" class="d-flex justify-content-around m-auto bg-white rounded-3 shadow p-3 mt-3 mb-2">
+                <div id="drawing-colors" class="d-flex justify-content-center align-items-center px-3">
+                    <div class="color-circle rounded-circle shadow-sm selected" data-color="hotpink"
+                        onclick="selectColor(this)"></div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="orange"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="red"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="yellow"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="black"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="blue"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm border border-1 border-light"
+                        data-color="white" onclick="selectColor(this)"></div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="green"
+                        onclick="selectColor(this)">
+                    </div>
+                </div>
+
+                <div id="fav-container" class="border border-2 border-top-0 border-bottom-0 mx-2 px-4">
+                    <label for="fav-color" class="form-label text-center mb-0"><i class="bi bi-palette-fill"></i>Select your
+                        favourite
+                        color</label>
+                    <input type="color" name="fav-color" id="fav-color"
+                        class="form-control form-control-color border border-0 m-auto" value="#000000"
+                        onchange="favColor(this)">
+                </div>
+
+                <div id="pen-size" class="d-flex flex-column text-center mb-0 px-3">
+                    <label for="pen-range" class="form-label mb-2"><i class="bi bi-pencil-fill"></i>Pen size</label>
+                    <input type="range" id="pen-range" name="pen-range" class="form-range" value="6" step="2" min="2"
+                        max="40" onclick="penSizeChange(this.value)">
+                </div>
+
+            </header>
+        </main> <!-- MAIN MENU LARGE DEVICES -->
 
         <section class="d-flex justify-content-center align-items-center pt-3 pb-4">
-            <p class="text-center mb-0">Paint by holding down the mouse left button and moving it.
-                <button id="btn-undo" class="btn btn-light d-inline-block shadow ms-2 disabled" data-bs-toggle="tooltip" data-bs-placement="top" title="Undo"><i class="bi bi-arrow-90deg-left ms-0 me-0"></i></button>
-                        <!-- <button id="btn-redo" class="btn btn-light d-inline-block shadow ms-2 disabled" data-bs-toggle="tooltip" data-bs-placement="top" title="Redo"><i class="bi bi-arrow-90deg-right ms-0 me-0"></i></button> -->
-                <a href="" id="download-btn" class="btn btn-primary d-inline-block align-items-center shadow ms-2" download="my_painting.png"><i
-                class="bi bi-download"></i>Download</a>
-                    <button id="clear-canvas" class="btn btn-danger d-inline-block shadow ms-2"><i
-                    class="bi bi-eraser-fill"></i>Clear canvas</a></button>
-            </p>
-        </section>
+            <p id="advice" class="text-center mb-0">Paint by holding down the mouse left button and moving it.</p>
+            <button id="btn-undo" class="btn btn-light shadow ms-2 disabled" data-bs-toggle="tooltip"
+                data-bs-placement="top" title="Undo"><i class="bi bi-arrow-90deg-left ms-0 me-0"></i></button>
+            <a href="" id="download-btn" class="btn btn-primary align-items-center shadow ms-2"
+                download="my_painting.png"><i class="bi bi-download"></i><span>Download</span></a>
+            <button id="clear-canvas" class="btn btn-danger shadow ms-2"><i
+                    class="bi bi-eraser-fill"></i><span>Clear</span></a></button>
+
+        </section> <!-- BUTTONS -->
 
         <div id="board" class="d-flex justify-content-center align-items-center mb-5">
-            <canvas width="1000px" height="550px" class="bg-white m-auto shadow"></canvas>
-        </div>
+            <canvas class="bg-white m-auto shadow"></canvas>
+        </div> <!-- CANVAS -->
 
-    </div> <!-- container -->
+    </div> <!-- MAIN CONTAINER -->
 
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

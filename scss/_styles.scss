@@ -2,9 +2,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 html, body {
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
+}
+
+#responsive-navbar {
+    display: none;
+}
+
+header {
+    // width: 75%;
 }
 
 #pen-tools {
@@ -55,4 +69,45 @@ i {
 
 .selected {
     transform:scale(1.4);
+}
+
+canvas {
+    width:1000px; 
+    height:550px;
+    min-width: 90%;
+    min-height: 60%;
+}
+
+@media only screen and (max-width: 992px) {
+
+    main {
+        display: none;
+    }
+
+    #responsive-navbar {
+        display: block;
+    }
+
+    #advice {
+        display: none;
+    }
+
+    #pen-range {
+        max-width: 45%;
+        margin:auto;
+    }
+
+    #fav-container {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    // div label {
+    //     display: none;
+    // }
+
+    canvas {
+        max-height: 75vh;
+    }
+
 }
