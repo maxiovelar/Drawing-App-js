@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "purgecss": "purgecss --css ./css/**/*.css --content ./src/*.html --output ./docs/css",
-    "purgeicons": "purgecss --css ./node_modules/**/*bootstrap-icons.css --content ./src/*.html --output ./docs/css"
+    "purgeicons": "purgecss --css ./font/**/*bootstrap-icons.css --content ./src/*.html --output ./docs/font"
   },
   "keywords": [],
   "author": "",
