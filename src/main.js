@@ -4,6 +4,8 @@ const downloadBtn = document.querySelector('#download-btn');
 const undoBtn = document.querySelector('#btn-undo');
 const redoBtn = document.querySelector('#btn-redo');
 const canvas = document.querySelector('canvas');
+canvas.width = window.innerWidth - 60;
+canvas.height = 400;
 const ctx = canvas.getContext('2d');
 
 let penSize = 6;

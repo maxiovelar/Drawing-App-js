@@ -90,4 +90,30 @@ i {
         margin-bottom: 15px;
     }
 
+    canvas {
+        width: 800px;
+        height: 400px;
+    }
+
 }
+
+@media only screen and (max-width: 768px) {
+    canvas {
+        width: 600px;
+        height: 300px;
+    }
+}
+
+// @media only screen and (max-width: 600px) {
+//     canvas {
+//         width: 500px;
+//         height: 250px;
+//     }
+// }
+
+// @media only screen and (max-width: 400px) {
+//     canvas {
+//         width: 320px;
+//         height: 160px;
+//     }
+// }
