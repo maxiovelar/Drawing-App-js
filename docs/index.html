@@ -16,26 +16,26 @@
         <div class="bg-white p-4">
             <div id="drawing-colors" class="d-flex justify-content-center align-items-center py-3">
                 <div class="color-circle rounded-circle shadow-sm selected" data-color="black"
-                    onclick="selectColor(this)"></div>
+                    ontouch="selectColor(this)"></div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="yellow"
-                        onclick="selectColor(this)">
+                        ontouch="selectColor(this)">
                     </div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="orange"
-                        onclick="selectColor(this)">
+                        ontouch="selectColor(this)">
                     </div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="red"
-                        onclick="selectColor(this)">
+                        ontouch="selectColor(this)">
                     </div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="hotpink"
-                            onclick="selectColor(this)">
+                        ontouch="selectColor(this)">
                     </div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="blue"
-                        onclick="selectColor(this)">
+                        ontouch="selectColor(this)">
                     </div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm border border-1 border-light"
-                        data-color="white" onclick="selectColor(this)"></div>
+                        data-color="white" ontouch="selectColor(this)"></div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="green"
-                        onclick="selectColor(this)">
+                        ontouch="selectColor(this)">
                     </div>
             </div>
 
@@ -54,7 +54,7 @@
             <div id="pen-size" class="d-flex flex-column text-center mb-0 pt-3">
                 <label for="pen-range" class="form-label mb-2"><i class="bi bi-pencil-fill"></i>Pen size</label>
                 <input type="range" id="pen-range" name="pen-range" class="form-range" value="6" step="2" min="2"
-                    max="40" onclick="penSizeChange(this.value)">
+                    max="40" ontouch="penSizeChange(this.value)">
             </div>
         </div>
     </div>
