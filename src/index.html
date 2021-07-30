@@ -15,22 +15,28 @@
     <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-white p-4">
             <div id="drawing-colors" class="d-flex justify-content-center align-items-center py-3">
-                <div class="color-circle rounded-circle shadow-sm selected" data-color="hotpink"
+                <div class="color-circle rounded-circle shadow-sm selected" data-color="black"
                     onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="orange" onclick="selectColor(this)">
-                </div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="red" onclick="selectColor(this)">
-                </div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="yellow" onclick="selectColor(this)">
-                </div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="black" onclick="selectColor(this)">
-                </div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="blue" onclick="selectColor(this)">
-                </div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm border border-1 border-light" data-color="white"
-                    onclick="selectColor(this)"></div>
-                <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="green" onclick="selectColor(this)">
-                </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="yellow"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="orange"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="red"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="hotpink"
+                            onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="blue"
+                        onclick="selectColor(this)">
+                    </div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm border border-1 border-light"
+                        data-color="white" onclick="selectColor(this)"></div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="green"
+                        onclick="selectColor(this)">
+                    </div>
             </div>
 
             <hr>
@@ -63,24 +69,23 @@
         </div>
     </nav> <!-- RESPONSIVE NAVBAR -->
 
-    <div class="container-xl">
-
+    <div  id="main-container" class="container-xl">
         <main>
             <header id="pen-tools" class="d-flex justify-content-around m-auto bg-white rounded-3 shadow p-3 mt-3 mb-2">
                 <div id="drawing-colors" class="d-flex justify-content-center align-items-center px-3">
-                    <div class="color-circle rounded-circle shadow-sm selected" data-color="hotpink"
-                        onclick="selectColor(this)"></div>
+                    <div class="color-circle rounded-circle shadow-sm selected" data-color="black"
+                    onclick="selectColor(this)"></div>
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="yellow"
+                        onclick="selectColor(this)">
+                    </div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="orange"
                         onclick="selectColor(this)">
                     </div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="red"
                         onclick="selectColor(this)">
                     </div>
-                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="yellow"
-                        onclick="selectColor(this)">
-                    </div>
-                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="black"
-                        onclick="selectColor(this)">
+                    <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="hotpink"
+                            onclick="selectColor(this)">
                     </div>
                     <div class="color-circle rounded-circle ms-2 shadow-sm" data-color="blue"
                         onclick="selectColor(this)">
@@ -118,13 +123,11 @@
                 download="my_painting.png"><i class="bi bi-download"></i><span>Download</span></a>
             <button id="clear-canvas" class="btn btn-danger shadow ms-2"><i
                     class="bi bi-eraser-fill"></i><span>Clear</span></a></button>
-
         </section> <!-- BUTTONS -->
 
-        <div id="board" class="d-flex justify-content-center align-items-center mb-5">
+        <div id="board" class="d-flex justify-content-center align-items-center m-auto">
             <canvas class="bg-white m-auto shadow"></canvas>
         </div> <!-- CANVAS -->
-
     </div> <!-- MAIN CONTAINER -->
 
 

@@ -2,14 +2,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     height: 100%;
     width: 100%;
-}
-
-html, body {
     margin: 0;
     padding: 0;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+
 }
 
 #responsive-navbar {
@@ -24,6 +32,10 @@ i {
     margin-right: 8px;
 }
 
+#main-container {
+    height: 100vh;
+}
+
 .color-circle {
     width: 20px;
     height: 20px;
@@ -31,23 +43,23 @@ i {
 }
 
 .color-circle:nth-child(1) {
-    background-color: hotpink;
+    background-color: black;
 }
 
 .color-circle:nth-child(2) {
-    background-color: orange;
-}
-
-.color-circle:nth-child(3) {
-    background-color: red;
-}
-
-.color-circle:nth-child(4) {
     background-color: yellow;
 }
 
+.color-circle:nth-child(3) {
+    background-color: orange;
+}
+
+.color-circle:nth-child(4) {
+    background-color: red;
+}
+
 .color-circle:nth-child(5) {
-    background-color: black;
+    background-color: hotpink;
 }
 
 .color-circle:nth-child(6) {
@@ -65,6 +77,14 @@ i {
 .selected {
     transform:scale(1.4);
 }
+
+// #board {
+//     height: 500px;
+// }
+
+// canvas {
+//     height: 70%;
+// }
 
 @media only screen and (max-width: 992px) {
 
@@ -91,18 +111,16 @@ i {
     }
 
     canvas {
-        width: 800px;
-        height: 400px;
+        height: 80%;
     }
 
 }
 
-@media only screen and (max-width: 768px) {
-    canvas {
-        width: 600px;
-        height: 300px;
-    }
-}
+// @media only screen and (max-width: 600px) {
+//     canvas {
+//         height: 50%;
+//     }
+// }
 
 // @media only screen and (max-width: 600px) {
 //     canvas {
