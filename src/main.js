@@ -22,25 +22,28 @@ let index = -1;
 let restoreArray = [];
 
 
+// TO GET COORDINATES
+
+const getX = (event) => {
+    if (event.pageX == undefined) {
+        return event.targetTouches[0].pageX - canvas.offsetLeft;
+    } else {return event.pageX - canvas.offsetLeft}
+};
+
+const getY = (event) => {
+    if (event.pageY == undefined) {
+        return event.targetTouches[0].pageY - canvas.offsetTop;
+    } else {return event.pageY - canvas.offsetTop}
+};
+
+
 
 // TO START DRAWING
-
-// canvas.addEventListener('mousedown', (event) => {
-//     if(event.type != 'mouseout') {
-
-//         isDrawing = true;
-//         x = event.offsetX;
-//         y = event.offsetY;
-
-//     }
-
-// });
 
 const start = (event) => {
     isDrawing = true;
     context.beginPath();
-    context.moveTo(event.clientX - canvas.offsetLeft,
-                   event.clientY - canvas.offsetTop);
+    context.moveTo(getX(event), getY(event));
     event.preventDefault();
 };
 
@@ -48,46 +51,9 @@ const start = (event) => {
 
 // TO SHOW THE DRAWINGS
 
-// context.fillStyle = 'black';
-// context.strokeStyle = context.fillStyle;
-
-// const start = (x1, y1, x2, y2) => {
-    
-//     context.beginPath();
-//     context.moveTo(x1, y1);
-//     context.lineTo(x2, y2);
-//     context.strokeStyle = context.fillStyle;
-//     context.lineWidth = penSize * 2;
-//     context.stroke();
-
-// };
-
-// const draw = (x2, y2) => {
-
-//     if (isDrawing) {
-       
-//         context.beginPath();
-//         context.arc(x2, y2, penSize, 0, Math.PI * 2);
-//         context.closePath();
-//         context.fill();
-//         // draw line
-//         start(x, y, x2, y2);
-
-//     }
-
-//     x = x2;
-//     y = y2;
-
-// };
-
-// canvas.addEventListener('mousemove', (event) => {
-//     draw(event.offsetX, event.offsetY);
-// });
-
 const draw = (event) => {
     if(isDrawing) {
-        context.lineTo(event.clientX - canvas.offsetLeft,
-                       event.clientY - canvas.offsetTop);
+        context.lineTo(getX(event), getY(event));
         context.strokeStyle = drawColor;
         context.lineWidth = penSize;
         context.lineCap = 'round';
@@ -101,34 +67,20 @@ const draw = (event) => {
 
 // TO STOP DRAWING
 
-// canvas.addEventListener('mouseup', (event) => {
-    
-//     if(event.type != 'mouseout') {
-
-//         isDrawing = false;
-//         x = undefined;
-//         y = undefined;
-        
-//         restoreArray.push(context.getImageData(0, 0, canvas.width, canvas.height));
-//         index += 1;
-//         undoBtn.classList.remove('disabled');
-        
-//     };
-
-// });
-
 const stop = (event) => {
     if(isDrawing) {
         context.stroke();
         context.closePath();
         isDrawing = false;
-
-        restoreArray.push(context.getImageData(0, 0, canvas.width, canvas.height));
-        index += 1;
-        undoBtn.classList.remove('disabled');
     }
+
     event.preventDefault();
+    restoreArray.push(context.getImageData(0, 0, canvas.width, canvas.height));
+    index += 1;
+    undoBtn.classList.remove('disabled');
+    console.log(event);
 }
+
 
 
 canvas.addEventListener('touchstart', start, false);
