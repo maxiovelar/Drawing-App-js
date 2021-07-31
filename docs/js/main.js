@@ -141,7 +141,6 @@ const favColor = (element) => {
 // TO CHANGE THE PEN SIZE
 const penSizeChange = (element) => {
     penSize = element;
-    console.log(penSize);
 };
 
 
