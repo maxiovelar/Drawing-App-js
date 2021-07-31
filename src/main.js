@@ -147,7 +147,9 @@ const penSizeChange = (element) => {
 
 
 // TO DOWNLOAD THE PAINT
-downloadBtn.addEventListener('click', (event) => event.target.href = canvas.toDataURL());
+downloadBtn.addEventListener('click', (event) => {
+    event.target.href = canvas.toDataURL();
+});
 
 
 // TO UNDO

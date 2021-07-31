@@ -23,7 +23,6 @@ let restoreArray = [];
 
 
 // TO GET COORDINATES
-
 const getX = (event) => {
     if (event.pageX == undefined) {
         return event.targetTouches[0].pageX - canvas.offsetLeft;
@@ -39,7 +38,6 @@ const getY = (event) => {
 
 
 // TO START DRAWING
-
 const start = (event) => {
     isDrawing = true;
     context.beginPath();
@@ -50,7 +48,6 @@ const start = (event) => {
 
 
 // TO SHOW THE DRAWINGS
-
 const draw = (event) => {
     if(isDrawing) {
         context.lineTo(getX(event), getY(event));
@@ -66,7 +63,6 @@ const draw = (event) => {
 
 
 // TO STOP DRAWING
-
 const stop = (event) => {
     if(isDrawing) {
         context.stroke();
@@ -146,7 +142,9 @@ const penSizeChange = (element) => {
 
 
 // TO DOWNLOAD THE PAINT
-downloadBtn.addEventListener('click', (event) => event.target.href = canvas.toDataURL());
+downloadBtn.addEventListener('click', (event) => {
+    event.target.href = canvas.toDataURL();
+});
 
 
 // TO UNDO
