@@ -12,7 +12,17 @@
 
 <body class="bg-secondary">
 
-    <div class="collapse" id="navbarToggleExternalContent">
+    <nav id="responsive-navbar" class="navbar navbar-light bg-white shadow-sm py-1">
+        <div class="container-fluid ps-0">
+            <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h4 class="m-auto pe-5"><b>Drawing App</b></h4>
+        </div>
+    </nav>
+    <div class="collapse shadow-sm" id="navbarToggleExternalContent">
         <div class="bg-white p-4">
             <div id="drawing-colors" class="d-flex justify-content-center align-items-center py-3">
                 <div class="color-circle rounded-circle shadow-sm selected" data-color="black"
@@ -57,17 +67,7 @@
                     max="40" oninput="penSizeChange(this.value)">
             </div>
         </div>
-    </div>
-    <nav id="responsive-navbar" class="navbar navbar-light bg-white shadow-sm py-1">
-        <div class="container-fluid ps-0">
-            <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <h4 class="m-auto pe-5"><b>Drawing App</b></h4>
-        </div>
-    </nav> <!-- RESPONSIVE NAVBAR -->
+    </div> <!-- RESPONSIVE NAVBAR -->
 
     <div  id="main-container" class="container-xl">
         <main>
