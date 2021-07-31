@@ -78,7 +78,6 @@ const stop = (event) => {
     restoreArray.push(context.getImageData(0, 0, canvas.width, canvas.height));
     index += 1;
     undoBtn.classList.remove('disabled');
-    console.log(event);
 }
 
 
@@ -140,8 +139,9 @@ const favColor = (element) => {
 
 
 // TO CHANGE THE PEN SIZE
-const penSizeChange = (pensize) => {
-    penSize = pensize
+const penSizeChange = (element) => {
+    penSize = element;
+    console.log(penSize);
 };
 
 
